@@ -21,21 +21,21 @@ function TeamAndPointTracker() {
                 type="text"
                 id="team-one-name"
                 name="teamNameOne"
-                placeholder="Enter team one name"
+                placeholder="Enter team name"
                 value={teamNameOne}
                 onChange={(e) => setTeamNameOne(e.target.value)}
-                class="w-4/5 bg-gray-100 text-myblue mt-2 p-1 focus:outline-none focus:ring-myblue"
+                class="border-b border-coral py-2 appearance-none bg-transparent w-4/5 text-coral mr-3 py-1 px-2 leading-tight focus:outline-none"
               />
               <input
                 type="text"
                 id="team-two-name"
                 name="teamNameTwo"
-                placeholder="Enter team two name"
+                placeholder="Enter team name"
                 value={teamNameTwo}
                 onChange={(e) => setTeamNameTwo(e.target.value)}
-                class="w-4/5 bg-gray-100 text-gray-900 mt-2 p-1 focus:outline-none focus:shadow-outline"
+                class="border-b border-coral py-2 appearance-none bg-transparent w-4/5 text-coral mr-3 py-1 px-2 leading-tight focus:outline-none"
               />
-            <input type="submit" class="text-white bg-myblue hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" value="Submit" />
+            <input type="submit" value="Submit" />
           </form>
         </div>
       ) : (

@@ -3,7 +3,7 @@ import { useGameContext } from '../context';
 // const categories = require("../data/categories.json");
 
 const categories = {
-    "allCategories": ["Tube Stations", "Olympic Sports", "Girls' Names Beginning With D", "World Capitals", "Countries in Africa", "Boys' Names Beginning With F", "British TV Shows", "World Politicians", "Airlines", "'Love Is Blind' Contestants", "Zoo Animals"],
+    "allCategories": ["Tube Stations", "Olympic Sports", "Girls' Names Beginning With D", "World Capitals", "Countries in Africa", "Boys' Names Beginning With F", "British TV Shows", "World Politicians", "Airlines", "'Love Is Blind' Contestants", "Zoo Animals", "Languages", "'The X Factor' Judges", "'I'm A Celebrity, Get Me Out Of Here' Contestants", "Famous Mathematicians"],
     "selectedCatergories": []
 }
 
@@ -20,12 +20,10 @@ function Categories() {
     }
 
     useEffect(() => {
-        if (stage === 'ready' && currentRound < rounds) {
-            setCurrentRound(currentRound + 1);
+        if (stage === 'ready') {
+            if (currentRound < rounds) { setCurrentRound(currentRound + 1) }
             const newCategory = generateRandomCategory();
             setCategory(newCategory);
-        } else if (currentRound === rounds) {
-            setStage('over')
         }
     }, [stage]);
 
@@ -34,10 +32,15 @@ function Categories() {
             {stage === 'setup' &&
                 <div>
                     <h1>How many rounds?</h1>
-                    <input type='number' min='5' max='20' value={rounds} onChange={() => setRounds(rounds)} />
+                    <div class='input'>
+                        {rounds > 1 && <i class="bi bi-dash" onClick={e => { setRounds(rounds - 1) }}></i>}
+                        <p>{rounds}</p>
+                        {rounds < 20 && <i class="bi bi-plus" onClick={e => { setRounds(rounds + 1) }}></i>}
+
+                    </div>
                 </div>
             }
-            {stage !== 'score' && 
+            { (stage ==='ready' || stage === 'round') && 
                 <div>
                     <p>Round {currentRound} of {rounds}</p>
                     <h2 id='category-name'>{category}</h2>

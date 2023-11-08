@@ -3,7 +3,7 @@ import { useGameContext } from '../context';
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function ResetGame() {
-    const { setStage, setTimerLength, setTeamNameOne, setTeamNameTwo, setRounds, setCurrentRound } = useGameContext();
+    const { setStage, setTimerLength, setTeamNameOne, setTeamNameTwo, setRounds, setCurrentRound, setTeamOneScore, setTeamTwoScore } = useGameContext();
     const resetGame = () => {
         setStage('setup');
         setTimerLength(30);
@@ -11,6 +11,8 @@ function ResetGame() {
         setTeamNameTwo("");
         setRounds(10);
         setCurrentRound(0);
+        setTeamOneScore (0);
+        setTeamTwoScore(0);
     };
 
     return (

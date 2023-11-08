@@ -1,9 +1,11 @@
 import './App.css';
+import { EasybaseProvider, useEasybase } from 'easybase-react';
 import { Categories, Play, ResetGame, TeamAndPointTracker, Timer, SelectRoundWinner } from './components/index'
 
 function App() {
   return (
     <div className="App">
+      <EasybaseProvider>
       <section id='left-screen'>
         <TeamAndPointTracker/>
         <div id='logo-and-timer'>
@@ -18,7 +20,8 @@ function App() {
       <section id='right-screen'>
         <ResetGame/>
         <Play/>
-      </section>
+        </section>
+        </EasybaseProvider>
     </div>
   );
 }

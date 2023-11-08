@@ -28,12 +28,12 @@ function Timer() {
     return (
         <div id='timer' className='component'>
             <h1>Time</h1>
-                { stage === 'setup' && <input
-                    type='number'
-                    min='20'
-                    max='60'
-                    value={timerLength}
-                    onChange={(e) => setTimerLength(e.target.value)}/>
+            {stage === 'setup' &&
+                <div id='timer-input' class='input'>
+                    {timerLength > 1 && <i class="bi bi-dash" onClick={e => { setTimerLength(timerLength - 1) }}></i>}
+                        <p>{timerLength}</p>
+                    {timerLength < 60 && <i class="bi bi-plus" onClick={e => { setTimerLength(timerLength + 1) }}></i>}
+                 </div>
                 }
                 { 
                     stage !== 'setup' && <p>{timeLeft}</p>

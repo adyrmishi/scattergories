@@ -5,8 +5,8 @@
 
 /* Global styles */
 * {
-  background-color: rgb(114, 199, 222);
-  color: rgb(24, 48, 103);
+  background-color: #014749;
+  color: #db4f4f;
   font-weight: 700;
   font-size: 25px;
   font-family: 'Raleway', sans-serif;
@@ -17,11 +17,12 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden; /* Add this line to disable scrolling */
 }
 
 /* Container styles */
 .App {
-  border: 4px solid rgb(24, 48, 103);
+  border: 4px solid #db4f4f;
   margin: 20px;
   height: 675px;
   display: flex;
@@ -41,14 +42,14 @@ html, body {
   display: flex;
   flex-direction: row;
   height: 50%;
-  border-right: 4px solid rgb(24, 48, 103);
+  border-right: 4px solid #db4f4f;
 }
 
 /* Team and point tracker styles */
 #team-and-point-tracker {
   flex: 1;
-  border-bottom: 4px solid rgb(24, 48, 103);
-  border-right: 4px solid rgb(24, 48, 103);
+  border-bottom: 4px solid #db4f4f;
+  border-right: 4px solid #db4f4f;
 }
 
 /* Logo styles */
@@ -56,7 +57,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 4px solid rgb(24, 48, 103);
+  border-right: 4px solid #db4f4f;
   width: 25%;
   writing-mode: vertical-lr;
   text-orientation: mixed;
@@ -80,7 +81,7 @@ html, body {
 
 /* Restart button styles */
 #restart {
-  border-left: 4px solid rgb(24, 48, 103);
+  border-left: 4px solid #db4f4f;
   height: 25%;
   display: flex;
   flex-direction: column;
@@ -89,10 +90,10 @@ html, body {
 
 /* Play button styles */
 #play {
-  border-left: 4px solid rgb(24, 48, 103);
+  border-left: 4px solid #db4f4f;
   height: 75%;
   flex: 1;
-  border-top: 4px solid rgb(24, 48, 103);
+  border-top: 4px solid #db4f4f;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -114,7 +115,7 @@ p, h1 {
   position: relative;
 }
 
-#timer > input, #timer > p, #categories > div > input {
+#timer > p, #categories > div > input {
   border-style: none;
   margin: auto;
   align-self: flex-start;
@@ -124,10 +125,13 @@ p, h1 {
   left: 50%;
   transform: translate(-50%, -50%);  
 }
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button {
-  opacity: 1;
+.input > p {
+  font-size: 80px;
+  margin: 0;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
 
 i {
@@ -158,12 +162,12 @@ tbody td {
   text-align: center;
 }
 
-thead > tr > th {
+/* thead > tr > th {
   padding-top: 5%;
-}
+} */
 
 th {
-  border-bottom: 3px dashed rgb(24, 48, 103);
+  border-bottom: 3px dashed #db4f4f;
 }
 
 td {
@@ -171,7 +175,7 @@ td {
 }
 
 th:first-child, td:first-child {
-  border-right: 3px dashed rgb(24, 48, 103);
+  border-right: 3px dashed #db4f4f;
 }
 #team-names-form {
   display: flex;
@@ -183,5 +187,57 @@ form {
   flex-direction: column;
   gap: 20px;
   align-items: center;
-
+}
+button, input[type='submit'] {
+  color: #014749;
+  background-color: #db4f4f;
+  padding: 1% 3%;
+  font-size: 40px;
+}
+input[type='submit'] {
+  margin-top: 5%;
+  font-size: 25px;
+}
+#select-round-winner {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  font-size: 40px;
+}
+h2 {
+  text-align: center;
+  padding-bottom: 5%;
+}
+#teams-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25%;
+  align-items: center;
+  height: 100%;
+}
+.input {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.input > i:first-of-type {
+  font-size: 30px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 20%;
+}
+.input > i:last-of-type {
+  font-size: 30px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 80%;
 }

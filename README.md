@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Scattergories - Replica
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Heavily inspired by [https://swellgarfo.com/scattergories/](https://swellgarfo.com/scattergories/). This is a project I've made for practise and to adapt the game to the way me and my friends play it! It's not for profit and want it to be treated as a project I've created to develop my web development skills.
 
 ## Available Scripts
 
