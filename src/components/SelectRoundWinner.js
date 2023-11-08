@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useGameContext } from '../context';
 
 function SelectRoundWinner() {
-    const { stage, teamNameOne, teamNameTwo, setStage, currentRound, setCurrentRound, rounds, teamOneScore, setTeamOneScore, teamTwoScore, setTeamTwoScore } = useGameContext();
+    const { stage, teamNameOne, teamNameTwo, setStage, currentRound, rounds, teamOneScore, setTeamOneScore, teamTwoScore, setTeamTwoScore } = useGameContext();
 
     const addScore = teamName => {
         teamName === teamNameOne ? setTeamOneScore(teamOneScore + 1) : setTeamTwoScore(teamTwoScore + 1);

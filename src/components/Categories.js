@@ -1,29 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useGameContext } from '../context';
-// const categories = require("../data/categories.json");
-
-const categories = {
-    "allCategories": ["Tube Stations", "Olympic Sports", "Girls' Names Beginning With D", "World Capitals", "Countries in Africa", "Boys' Names Beginning With F", "British TV Shows", "World Politicians", "Airlines", "'Love Is Blind' Contestants", "Zoo Animals", "Languages", "'The X Factor' Judges", "'I'm A Celebrity, Get Me Out Of Here' Contestants", "Famous Mathematicians"],
-    "selectedCatergories": []
-}
+import { supabase } from '../client';
 
 function Categories() {
-    const { stage, rounds, currentRound, setCurrentRound, setStage, setRounds } = useGameContext();
+    const { stage, rounds, currentRound, setCurrentRound, setRounds } = useGameContext();
     const [category, setCategory] = useState("");
-
-    const generateRandomCategory = () => {
-        const allCategories = categories["allCategories"];
-        const randomIndex = Math.floor(Math.random() * allCategories.length);
-        const selectedElement = allCategories.splice(randomIndex, 1)[0];
-        categories["selectedCatergories"].push(selectedElement);
-        return selectedElement;
-    }
 
     useEffect(() => {
         if (stage === 'ready') {
             if (currentRound < rounds) { setCurrentRound(currentRound + 1) }
-            const newCategory = generateRandomCategory();
-            setCategory(newCategory);
+            const generateRandomCategory = async () =>  {
+                const { data } = await supabase.rpc('generate_random_category');
+                setCategory(data.category)
+                const { error } = await supabase
+                    .from('Categories')
+                    .update({ selected: true })
+                    .eq('id', data.id)
+            }
+            generateRandomCategory();
+            if (stage === 'score') {
+                setCategory("");
+            }
         }
     }, [stage]);
 
