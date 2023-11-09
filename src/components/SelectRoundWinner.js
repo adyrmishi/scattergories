@@ -5,13 +5,29 @@ function SelectRoundWinner() {
     const { stage, teamNameOne, teamNameTwo, setStage, currentRound, rounds, teamOneScore, setTeamOneScore, teamTwoScore, setTeamTwoScore } = useGameContext();
 
     const addScore = teamName => {
+        console.log(teamOneScore)
+        console.log(teamTwoScore)
+        console.log(teamName)
+        console.log(teamNameOne)
+        console.log(teamNameTwo)
         teamName === teamNameOne ? setTeamOneScore(teamOneScore + 1) : setTeamTwoScore(teamTwoScore + 1);
+        console.log(teamOneScore)
+        console.log(teamTwoScore)
         currentRound === rounds ? setStage('over') : setStage('ready');
+    }
+    const findWinner = (teamOneScore, teamTwoScore) => {
+        if (teamOneScore < teamTwoScore) {
+            return `${teamNameTwo} wins`
+        } else if (teamOneScore > teamTwoScore) {
+            return `${teamNameOne} wins`  
+        } else {
+            return `Draw`
+        }
     }
 
     return (
         <div>
-            {stage === 'score' ? 
+            {stage === 'score' &&
                 <div id='select-round-winner' className='component'>
                     <h2>Point goes to</h2>
                     <div id='teams-container'>
@@ -19,8 +35,11 @@ function SelectRoundWinner() {
                         <button onClick={() => addScore(teamNameTwo)}>{teamNameTwo}</button>
                     </div>
                 </div>
-                :
-                null
+            }
+            {stage === 'over' &&
+                <div id='result' className='component'>
+                    <h2>{findWinner(teamOneScore, teamTwoScore)}</h2>
+                </div>
             }
         </div>
     );

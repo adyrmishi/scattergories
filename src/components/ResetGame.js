@@ -29,7 +29,7 @@ function ResetGame() {
     }, [stage]);
 
     return (
-        <div id='restart' className='component' onClick={resetGame}>
+        <div id='reset' className='component' onClick={resetGame}>
             <p>Reset</p>
             <i className="bi bi-arrow-repeat"></i>
         </div>

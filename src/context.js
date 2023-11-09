@@ -13,13 +13,7 @@ export function Provider({children}) {
     const [currentRound, setCurrentRound] = useState(0);
     const [teamOneScore, setTeamOneScore] = useState(0);
     const [teamTwoScore, setTeamTwoScore] = useState(0);
-
-    // const startGame = () => {
-    //     if (rounds && timerLength && teamNameOne.length > 0 && teamNameTwo.length > 0) {
-    //         setStage("ready");
-    //     }
-    // }
-
+    
     return (
     <GameContext.Provider value={{stage, setStage, timerLength, setTimerLength, teamNameOne, setTeamNameOne, teamNameTwo, setTeamNameTwo, rounds, setRounds, currentRound, setCurrentRound, teamOneScore, setTeamOneScore, teamTwoScore, setTeamTwoScore}}>
         {children}
