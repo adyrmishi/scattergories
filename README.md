@@ -1,6 +1,23 @@
 # Scattergories - Replica
 
-Heavily inspired by [https://swellgarfo.com/scattergories/](https://swellgarfo.com/scattergories/). This is a project I've made for practise and to adapt the game to the way me and my friends play it! It's not for profit and want it to be treated as a project I've created to develop my web development skills.
+Deployed at [https://scattergories-replica.netlify.app/](https://scattergories-replica.netlify.app/)
+
+## Summary
+
+Heavily inspired by [https://swellgarfo.com/scattergories/](https://swellgarfo.com/scattergories/). This is a project I've made for practise and to adapt the game to the way me and my friends play it! It's not for profit and should be treated as a project I've created to develop my web development skills.
+
+## Instructions
+
+Prerequisites: Someone other than yourself.
+
+1. Split into teams and decide how many rounds you want to play and how long a round should be (30 seconds works well).
+2. Once a category is generated, both teams should start a bidding war on who can name the most of the category. Once someone refuses to beat the bid, the highest bidder must attempt to match or beat their bid.
+3. If the person matches or beats the bid, their team gets a point - if not, the other team gets the point.
+4. Team with the most points wins.
+
+## What I've Learnt
+
+- Using Supabase to create a serverless database. Due to the small nature of the project, and the limited ways I needed to change the data I thought it would be more efficient to use a BaaS platform. It was incredibly easy to use and a great option for any project that is more front-end focused.
 
 ## Available Scripts
 
