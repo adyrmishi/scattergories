@@ -1,7 +1,6 @@
 import React from "react";
 import { useGameContext } from '../context'
 import "bootstrap-icons/font/bootstrap-icons.css";
-import ResetGame from "./ResetGame";
 
 function Play() {
     const { stage, setStage } = useGameContext();

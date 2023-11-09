@@ -7,7 +7,7 @@ function ResetGame() {
     const { stage, setStage, setTimerLength, setTeamNameOne, setTeamNameTwo, setRounds, setCurrentRound, setTeamOneScore, setTeamTwoScore } = useGameContext();
 
     const resetAllCategories = async () => {
-        const { data } = await supabase.rpc('reset_all');
+        await supabase.rpc('reset_all');
     }
 
     const resetGame = () => {

@@ -23,7 +23,7 @@ function Timer() {
         } else if (stage === 'ready') {
             setTimeLeft(timerLength);
         }
-    }, [stage, timeLeft]);
+    }, [stage, timeLeft, setStage, timerLength]);
     
     return (
         <div id='timer' className='component'>

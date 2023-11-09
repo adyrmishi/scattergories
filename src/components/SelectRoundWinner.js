@@ -5,14 +5,7 @@ function SelectRoundWinner() {
     const { stage, teamNameOne, teamNameTwo, setStage, currentRound, rounds, teamOneScore, setTeamOneScore, teamTwoScore, setTeamTwoScore } = useGameContext();
 
     const addScore = teamName => {
-        console.log(teamOneScore)
-        console.log(teamTwoScore)
-        console.log(teamName)
-        console.log(teamNameOne)
-        console.log(teamNameTwo)
         teamName === teamNameOne ? setTeamOneScore(teamOneScore + 1) : setTeamTwoScore(teamTwoScore + 1);
-        console.log(teamOneScore)
-        console.log(teamTwoScore)
         currentRound === rounds ? setStage('over') : setStage('ready');
     }
     const findWinner = (teamOneScore, teamTwoScore) => {

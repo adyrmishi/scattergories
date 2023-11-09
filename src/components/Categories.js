@@ -16,13 +16,16 @@ function Categories() {
                     .from('Categories')
                     .update({ selected: true })
                     .eq('id', data.id)
+                if ({ error } !== null) {
+                    return {error}
+                }
             }
             generateRandomCategory();
             if (stage === 'score') {
                 setCategory("");
             }
         }
-    }, [stage]);
+    }, [stage, currentRound, setCurrentRound, rounds]);
 
     return (
         <div id='categories' className='component'>
