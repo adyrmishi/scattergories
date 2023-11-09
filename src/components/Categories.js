@@ -25,6 +25,7 @@ function Categories() {
                 setCategory("");
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [stage]);
 
     return (

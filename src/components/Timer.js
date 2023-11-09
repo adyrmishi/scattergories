@@ -23,6 +23,7 @@ function Timer() {
         } else if (stage === 'ready') {
             setTimeLeft(timerLength);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [stage, timeLeft]);
     
     return (
