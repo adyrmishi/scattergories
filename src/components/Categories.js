@@ -25,7 +25,7 @@ function Categories() {
                 setCategory("");
             }
         }
-    }, [stage, currentRound, setCurrentRound, rounds]);
+    }, [stage]);
 
     return (
         <div id='categories' className='component'>
