@@ -12,19 +12,20 @@
   font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
 }
-
+#root {
+  height: 100%;
+  padding: 1%;
+}
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Add this line to disable scrolling */
 }
 
 /* Container styles */
 .App {
   border: 4px solid #db4f4f;
-  margin: 20px;
-  height: 675px;
+  height: 100%;
   display: flex;
   flex-direction: row;
 }
@@ -253,4 +254,109 @@ h2 {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 80%;
+}
+@media screen and (max-width: 600px) {
+  .App {
+    flex-direction: column;
+  }
+  #left-screen {
+    display: flex;
+    flex-direction: row;
+    height: 30%;
+    width: 100%;
+  }
+  #middle-screen {
+    height: 45%;
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
+  #right-screen {
+    display: flex;
+    flex-direction: row;
+    height: 25%;
+    width: 100%;
+  }
+  #team-and-point-tracker {
+    width: 60%;
+    flex: none;
+  }
+  #logo-and-timer {
+    height: 100%;
+    border-bottom: 4px solid #db4f4f;
+    border-right: none;
+  }
+  #timer {
+    width: 100%;
+  }
+  #logo {
+    display: none;
+  }
+  h1, p {
+    font-size: 15px;
+    margin-top: 3%;
+    margin-left: 5%;
+    width: auto;
+  }
+  form {
+    margin-top: 5%;
+    font-size: 18px;
+    gap: 0;
+  }
+  form > input[type='text'] {
+    /* padding: 8px; */
+    padding: 3%;
+    margin: 0;
+    width: 90%;
+  }
+  button, input[type='submit'] {
+    padding: 1% 3%;
+    font-size: 20px;
+    transition: ease-in-out 0.2s
+  }
+  input[type='submit'] {
+    margin-top: 10%;
+    font-size: 20px;
+  }
+  .input > i:first-of-type {
+    top: 25%;
+    left: 50%;
+  }
+  .input > i:last-of-type {
+    top: 75%;
+    left: 50%;
+  }
+  #timer-input > i:first-of-type {
+    top: 15%;
+    left: 50%;
+  }
+  #timer-input > i:last-of-type {
+    top: 85%;
+    left: 50%;
+  }
+  #reset {
+    height: 100%;
+    width: 50%;
+    border-left: none;
+    border-top: 4px solid #db4f4f;
+  }
+  #play {
+    height: 100%;
+  }
+  i, i:hover {
+    font-size: 70px;
+  }
+  #category-name {
+    font-size: 30px;
+    width: 100%;
+  }
+  #categories {
+    width: 100%;
+  }
+  #select-round-winner, #result {
+    font-size: 30px;
+  }
+  #root {
+    padding: 3%;
+  }
 }
