@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useGameContext } from '../context';
 import { supabase } from '../client';
+import Cookies from 'js-cookie';
 
 function Categories() {
     const { stage, rounds, currentRound, setCurrentRound, setRounds } = useGameContext();
     const [category, setCategory] = useState("");
 
     useEffect(() => {
+        const sessionId = Cookies.get('sessionId');
+        console.log(document.cookie)
+        if (sessionId) {
+            console.log('Session ID from cookie:', sessionId);
+        } else {
+            console.log('Session ID cookie not found.');
+        }
         if (stage === 'ready') {
             if (currentRound < rounds) { setCurrentRound(currentRound + 1) }
             const generateRandomCategory = async () =>  {
