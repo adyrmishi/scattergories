@@ -5,7 +5,7 @@ const protectedRoute = require('./routes/protected');
 const logoutRoute = require('./routes/logout');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(cookieParser());
 app.use(sessionMiddleware);
@@ -15,7 +15,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Credentials', 'true');
   next();
 });
-// Your routes and other middleware go here
+
 app.use('/protected', protectedRoute);
 app.use('/logout', logoutRoute);
 

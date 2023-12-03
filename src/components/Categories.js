@@ -9,7 +9,6 @@ function Categories() {
 
     useEffect(() => {
         const sessionId = Cookies.get('sessionId');
-        console.log(document.cookie)
         if (sessionId) {
             console.log('Session ID from cookie:', sessionId);
         } else {
